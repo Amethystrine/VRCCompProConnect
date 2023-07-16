@@ -1,0 +1,54 @@
+# その他
+data/
+
+# ログファイル
+*.log
+
+# バイナリファイル、生成されたファイル
+*.bin
+*.out
+*.o
+*.class
+
+# 一時ファイル
+*.tmp
+*.temp
+*.swp
+
+# バックアップファイル
+*~
+*.bak
+
+# システムファイル
+.DS_Store
+Thumbs.db
+
+# ビルド結果
+/dist
+/build
+
+# node modules
+/node_modules
+
+# Python関連
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Java / Maven関連
+target/
+*.war
+*.ear
+*.class
+
+# IDEの設定ファイル (JetBrains IDE, Visual Studio Code等)
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr

@@ -1,0 +1,23 @@
+version: '3'
+services:
+  react-app:
+    build: ./vrc-comppro-connect-frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./vrc-comppro-connect-frontend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+
+  rust-app:
+    build: ./vrc-comppro-connect-backend
+    ports:
+      - "8000:8000"
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/db:/data/db
