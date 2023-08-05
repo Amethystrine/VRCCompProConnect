@@ -1,13 +1,10 @@
-# ベースとなるDockerイメージ指定
-FROM node:14
-# 作業ディレクトリを設定
-WORKDIR /app
-# ホストのファイルをコピー
-COPY package*.json ./
-# パッケージのインストール
-RUN npm install
-COPY . .
-# ポート3000番を開放
-EXPOSE 3000
-# コマンドの実行
-CMD [ "npm", "start" ]
+# FROM node:16
+# WORKDIR /app
+# RUN npm install
+# RUN npm i react-scripts
+# COPY package*.json ./
+# COPY . .
+# EXPOSE 3000
+# CMD [ "npm", "start" ]
+RUN npm install axios
+RUN yarn add axios

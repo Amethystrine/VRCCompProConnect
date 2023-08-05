@@ -22,13 +22,13 @@ async fn main()  -> anyhow::Result<()>{
         .max_connections(5)
         .connect(&db_url).await?;
      let query = sqlx::query("CREATE TABLE IF NOT EXISTS member (
-         id              INTEGER PRIMARY KEY NOT NULL,
+         id              SERIAL PRIMARY KEY NOT NULL,
          vrc_name        VARCHAR NOT NULL,
          discord_name    VARCHAR NOT NULL,
          atcoder_id      VARCHAR NOT NULL,
          regist          VARCHAR NOT NULL
        )");
-    //let query = sqlx::query("INSERT INTO member (id,vrc_name,discord_name,atcoder_id,regist) VALUES (1,'あめんばー','あめとりんばー','amentorimaru','2023-07-13')");
+    //let query = sqlx::query("INSERT INTO member (vrc_name,discord_name,atcoder_id,regist) VALUES ('あめんばー','あめとりんばー','amentorimaru','2023-07-20')");
     //let query = sqlx::query("DROP TABLE member");
     query.execute(&pool).await?;
     //let users:Vec<Member> = sqlx::query_as(r"select * from member").fetch_all(&pool).await?;

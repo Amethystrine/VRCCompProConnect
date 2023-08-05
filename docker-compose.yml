@@ -1,23 +1,17 @@
 version: '3'
 services:
-  react-app:
-    build: ./vrc-comppro-connect-frontend
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./vrc-comppro-connect-frontend:/app
-      - /app/node_modules
-    environment:
-      - NODE_ENV=development
+  # frontend-app:
+  #   image: node:16
+  #   ports:
+  #     - "3000:3000"
+  #   volumes:
+  #     - ./:/app
+  #     - ./node_modules:/app/vrc-comppro-connect-frontend/node_modules
+  #   working_dir: /app/vrc-comppro-connect-frontend
+  #   command: /bin/sh -c "yarn && yarn start && yarn add axios"
 
-  rust-app:
+  backend-app:
     build: ./vrc-comppro-connect-backend
-    ports:
-      - "8000:8000"
-
-  mongo:
-    image: mongo
-    ports:
-      - "27017:27017"
-    volumes:
-      - ./data/db:/data/db
+    stdin_open: true
+    tty: true
+    
